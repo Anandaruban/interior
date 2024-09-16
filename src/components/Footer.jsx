@@ -2,13 +2,15 @@ import logo from "../utils/Logo.png"
 import { SiGmail, SiLinkedin, SiGithub } from "react-icons/si";
 import { LINKEDIN_LINK, GITHUB_LINK,
   EMAIL_LINK, } from "../utils/constants";
+import { motion } from "framer-motion";
+import { SlideLeft } from "./animate";
 
 const Footer = () => {
 
   const date = new Date().getFullYear()
 
   return (
-    <footer> 
+    <motion.footer variants={SlideLeft(.2)} initial="initial" whileInView="animate"> 
       <div className="container py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Company info section */}
@@ -97,7 +99,7 @@ const Footer = () => {
           &copy; {date} TCJ. All rights reserved
         </p>
       </div>
-    </footer>
+    </motion.footer>
   )
 }
 
